@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, EB_Garamond } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
     title: "PingPanda",
@@ -22,7 +23,7 @@ const RootLayout = ({
     return (
         <html className={cn(inter.variable, eb_garamond.variable)} lang="en">
             <body className="font-sans antialiased bg-brand-50 text-brand-950">
-                {children}
+                <ClerkProvider>{children}</ClerkProvider>
             </body>
         </html>
     );
