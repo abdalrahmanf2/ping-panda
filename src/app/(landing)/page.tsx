@@ -1,6 +1,9 @@
+import DiscordMessage from "@/components/DiscordMessage";
 import Heading from "@/components/Heading";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import MockDiscordUI from "@/components/MockDiscordUI";
 import ShinyButton from "@/components/ShinyButton";
+import { AnimatedList, AnimatedListItem } from "@/components/ui/animated-list";
 import { Check } from "lucide-react";
 
 const Home = () => {
@@ -50,7 +53,58 @@ const Home = () => {
                     </div>
                 </MaxWidthWrapper>
             </section>
-            <section></section>
+
+            <section className="relative bg-brand-25 pb-4">
+                <div className="absolute inset-x-0 bottom-24 top-24 bg-brand-700" />
+                <MaxWidthWrapper className="relative">
+                    <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+                        <MockDiscordUI>
+                            <AnimatedList>
+                                <AnimatedListItem>
+                                    <DiscordMessage
+                                        title="👤 New user signed up"
+                                        event="SignUp"
+                                        content={{
+                                            Name: "Seif Ihab",
+                                            Email: "7ag.seif@gmail.com",
+                                        }}
+                                        timestamp="Today at 6:13PM"
+                                        userImgSrc="/brand-asset-profile-picture.png"
+                                        username="PingPanda"
+                                    />
+                                </AnimatedListItem>
+                                <AnimatedListItem>
+                                    <DiscordMessage
+                                        title="💰 Payment received"
+                                        event="Revenue"
+                                        content={{
+                                            Amount: "$49.00",
+                                            Email: "mazenhassan55@gmail.com",
+                                            Plan: "PRO",
+                                        }}
+                                        timestamp="Today at 8:13AM"
+                                        userImgSrc="/brand-asset-profile-picture.png"
+                                        username="PingPanda"
+                                    />
+                                </AnimatedListItem>
+                                <AnimatedListItem>
+                                    <DiscordMessage
+                                        title="🚀 Revenue Milestone Achieved"
+                                        event="Milestone"
+                                        content={{
+                                            "Reccuring Revenue": "$5,000 USD",
+                                            Growth: "+8.2%",
+                                        }}
+                                        timestamp="Today at 5:11AM"
+                                        userImgSrc="/brand-asset-profile-picture.png"
+                                        username="PingPanda"
+                                    />
+                                </AnimatedListItem>
+                            </AnimatedList>
+                        </MockDiscordUI>
+                    </div>
+                </MaxWidthWrapper>
+            </section>
             <section></section>
             <section></section>
             <section></section>

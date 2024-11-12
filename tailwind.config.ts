@@ -13,6 +13,12 @@ const config: Config = {
             fontFamily: {
                 heading: ["var(--font-heading)", ...fontFamily.sans],
             },
+            boxShadow: {
+                discord:
+                    "0 1px 0 hsl(0 calc( 1 * 0%) 0.784% / 0.2), 0 1.5px 0 hsl(240 calc( 1 * 7.692%) 2.549% / 0.05), 0 2px 0 hsl(0 calc( 1 * 0%) 0.784% / 0.05)",
+                "discord-sec":
+                    "0 1px 0 hsl(0 calc( 1 * 0%) 0.784% / 0.05), 0 1.5px 0 hsl(240 calc( 1 * 7.692%) 2.549% / 0.05), 0 2px 0 hsl(0 calc( 1 * 0%) 0.784% / 0.05)",
+            },
             colors: {
                 brand: {
                     "25": "#F8F9FD",
@@ -28,9 +34,15 @@ const config: Config = {
                     "900": "#1B2A61",
                     "950": "#111A3E",
                 },
-                "discord-gray": "#36393f",
-                "discord-text": "#dcddde",
-                "discord-timestamp": "#72767d",
+                discord: {
+                    brand: "#5865f2",
+                    background: "#313338",
+                    overlay: "#383A40",
+                    gray: "#202225",
+                    text: "#dcddde",
+                    "text-secodary": "#949BA4",
+                    timestamp: "#72767d",
+                },
                 background: "hsl(var(--background))",
                 foreground: "hsl(var(--foreground))",
                 card: {
