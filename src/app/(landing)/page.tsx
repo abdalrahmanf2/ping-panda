@@ -105,7 +105,17 @@ const Home = () => {
                     </div>
                 </MaxWidthWrapper>
             </section>
-            <section></section>
+
+            <section className="relative py-24 sm:py-32 bg-brand-25">
+                <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
+                    <div>
+                        <h2 className="text-center text-base/7 font-semibold text-brand-600">
+                            Intuitive Monitoring
+                        </h2>
+                        <Heading>Stay ahead with real-time insights</Heading>
+                    </div>
+                </MaxWidthWrapper>
+            </section>
             <section></section>
             <section></section>
         </>

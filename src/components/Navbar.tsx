@@ -12,7 +12,7 @@ const Navbar = () => {
             <nav>
                 <MaxWidthWrapper>
                     <div className="flex h-16 items-center justify-between">
-                        <Link href="/" className="flex font-semibold">
+                        <Link href="/" className="flex text-xl font-semibold">
                             Ping<span className="text-brand-700">Panda</span>
                         </Link>
 
