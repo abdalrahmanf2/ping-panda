@@ -3,8 +3,28 @@ import Heading from "@/components/Heading";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import MockDiscordUI from "@/components/MockDiscordUI";
 import ShinyButton from "@/components/ShinyButton";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { AnimatedList, AnimatedListItem } from "@/components/ui/animated-list";
 import { Check } from "lucide-react";
+import Image from "next/image";
+
+const CODE_SNIPPET = `
+await fetch("http://localhost:3000/api/v1/events", {
+  method: "POST",
+  body: JSON.stringify({
+    category: "sale",
+    fields: {
+      plan: "PRO",
+      email: "zoe.martinez2001@email.com",
+      amount: 49.00
+    }
+  }),
+  headers: {
+    Authorization: "Bearer <YOUR_API_KEY>"
+  }
+})
+`;
 
 const Home = () => {
     return (
@@ -113,6 +133,125 @@ const Home = () => {
                             Intuitive Monitoring
                         </h2>
                         <Heading>Stay ahead with real-time insights</Heading>
+                    </div>
+                    <div className="grid gap-4 lg:grid-cols-3 lg:grid-rows-2">
+                        {/* First Bento Grid Item */}
+                        <div className="lg:order-2 bg-white p-8 rounded-t-[2rem] rounded-b-lg lg:rounded-lg ring ring-gray-100 border border-gray-200 flex flex-col items-center gap-4 text-center lg:text-start">
+                            <div className="space-y-2">
+                                <h3 className="text-brand-950 font-medium tracking-tight">
+                                    Track Any Event
+                                </h3>
+                                <p className="max-w-lg text-sm/6 text-gray-700">
+                                    From new user signups to successful
+                                    payments, PingPanda notifies you for all
+                                    critical events in your SaaS.
+                                </p>
+                            </div>
+                            <Image
+                                src="/bento-any-event.png"
+                                alt="Bento any event img"
+                                width={300}
+                                height={100}
+                                className="mt-4"
+                            />
+                        </div>
+
+                        {/* Second Bento Grid Item */}
+                        <div className="lg:row-span-2 lg:order-1 bg-white rounded-lg  lg:rounded-l-[2rem] ring ring-gray-100 border border-gray-200 flex flex-col items-center gap-2 text-center lg:text-start overflow-hidden">
+                            <div className="space-y-2 px-8 pt-12">
+                                <h3 className="text-brand-950 font-medium tracking-tight">
+                                    Real-time Notifications
+                                </h3>
+                                <p className="max-w-lg text-sm/6 text-gray-700">
+                                    Get notified about critical events the
+                                    moment they happen, no matter if you&apos;re
+                                    at home or on the go.
+                                </p>
+                            </div>
+                            <div className="relative mx-auto w-full max-w-sm min-h-[30rem] [container-type:inline-size] ">
+                                <div className="absolute inset-x-10 bottom-0 top-10 overflow-hidden rounded-t-[15cqw] border-t-[15px] border-x-[15px] border-gray-700 bg-gray-700">
+                                    <Image
+                                        src="/phone-screen.png"
+                                        alt="Phone Screenshot from Discord"
+                                        width={300}
+                                        height={430}
+                                        className="size-full object-cover object-top"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Third Bento Grid Item */}
+                        <div className="lg:row-start-2 lg:col-start-2 bg-white p-8 rounded-lg ring ring-gray-100 border border-gray-200 flex flex-col items-center gap-4 text-center lg:text-start">
+                            <div className="space-y-2">
+                                <h3 className="text-brand-950 font-medium tracking-tight">
+                                    Track Any Properties
+                                </h3>
+                                <p className="max-w-lg text-sm/6 text-gray-700">
+                                    Add any custom data you like to an event,
+                                    such as a user email, a purchase amount or
+                                    an exceeded quota.
+                                </p>
+                            </div>
+                            <Image
+                                src="/bento-custom-data.png"
+                                alt="Bento any event img"
+                                width={300}
+                                height={100}
+                                className="mt-4"
+                            />
+                        </div>
+
+                        {/* Fourth Bento Grid Item */}
+                        <div className="lg:row-span-2 lg:order-4 bg-white rounded-t-lg rounded-b-[2rem] lg:rounded-r-[2rem] ring ring-gray-100 border border-gray-200 flex flex-col items-center gap-2 text-center lg:text-start overflow-hidden">
+                            <div className="space-y-2 px-8 pt-8">
+                                <h3 className="text-brand-950 font-medium tracking-tight">
+                                    Easy Integration
+                                </h3>
+                                <p className="max-w-lg text-sm/6 text-gray-700">
+                                    Connect PingPanda with your existing
+                                    workflows in minutes and call our intuitive
+                                    logging API from any language.
+                                </p>
+                            </div>
+                            <div className="relative w-full min-h-[30rem] grow shadow-2xl">
+                                <div className="absolute bottom-0 left-10 right-0 top-10 rounded-tl-xl overflow-hidden mt-2 bg-gray-900">
+                                    <div className="flex bg-gray-800/40 text-white text-sm font-medium border-b border-b-white/10">
+                                        <div className="bg-white/5 px-4 py-2 -mb-px border-r border-r-white/20 border-b border-b-white/10">
+                                            pingpanda.js
+                                        </div>
+                                    </div>
+                                    <div className="overflow-hidden">
+                                        <div className="max-h-[30rem]">
+                                            <SyntaxHighlighter
+                                                style={{
+                                                    ...oneDark,
+                                                    'pre[class*="language-"]': {
+                                                        ...oneDark[
+                                                            'pre[class*="language-"]'
+                                                        ],
+                                                        background:
+                                                            "transparent",
+                                                        overflow: "hidden",
+                                                    },
+                                                    'code[class*="language-"]':
+                                                        {
+                                                            ...oneDark[
+                                                                'code[class*="language-"]'
+                                                            ],
+                                                            background:
+                                                                "transparent",
+                                                        },
+                                                }}
+                                                language="typescript"
+                                            >
+                                                {CODE_SNIPPET}
+                                            </SyntaxHighlighter>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </MaxWidthWrapper>
             </section>
