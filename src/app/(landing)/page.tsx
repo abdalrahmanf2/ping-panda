@@ -6,8 +6,9 @@ import ShinyButton from "@/components/ShinyButton";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { AnimatedList, AnimatedListItem } from "@/components/ui/animated-list";
-import { Check } from "lucide-react";
+import { Check, Star, VerifiedIcon } from "lucide-react";
 import Image from "next/image";
+import Testimonial from "@/components/Testimonial";
 
 const CODE_SNIPPET = `
 await fetch("http://localhost:3000/api/v1/events", {
@@ -255,7 +256,36 @@ const Home = () => {
                     </div>
                 </MaxWidthWrapper>
             </section>
-            <section></section>
+            <section className="py-24 sm:py-32 bg-white">
+                <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
+                    <div>
+                        <h2 className="text-center text-base/7 font-semibold text-brand-600">
+                            Real-World Experiences
+                        </h2>
+                        <Heading>What our customers say</Heading>
+                    </div>
+                    <div className="grid gap-4 lg:grid-cols-2 bg-brand-25 rounded-2xl divide-y divide-gray-200 lg:divide-y-0 lg:divide-x">
+                        <Testimonial
+                            testimonial="PingPanda has been a game-changer for me. I've been using it for two months now and seeing sales pop up in real-time is super satisfying."
+                            name="Freya Larsson"
+                            username="itsfreya"
+                            userImg="/user-2.png"
+                        />
+                        <Testimonial
+                            testimonial="PingPanda's been paying off for our SaaS. Nice to have simple way to see how we're doing day-to-day. Definitely makes our lives easier."
+                            name="Kai Durant"
+                            username="kdurant_"
+                            userImg="/user-1.png"
+                        />
+                    </div>
+                    <ShinyButton
+                        href="/sign-up"
+                        className="h-14 w-full max-w-xs text-base shadow-lg transition-shadow duration-300 hover:shadow-xl"
+                    >
+                        Start For Free Today
+                    </ShinyButton>
+                </MaxWidthWrapper>
+            </section>
             <section></section>
         </>
     );
