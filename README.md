@@ -1,6 +1,6 @@
 # PingPanda - A Modern Fullstack Event Monitoring SaaS
 
-Built with the Next.js App Router, Postgres, TypeScript, Tailwind & Clerk
+Built with the Next.js App Router, TypeScript & Tailwind.
 
 ![Project Image](https://github.com/abdalrahmanf2/ping-panda/blob/main/public/thumbnail.png)
 
