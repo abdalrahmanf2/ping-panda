@@ -65,7 +65,7 @@ const Home = () => {
 
             <div className="w-full max-w-80">
               <ShinyButton
-                href="/sign-up"
+                href="#"
                 className="h-14 w-full text-base shadow-lg transition-shadow duration-300 hover:shadow-xl"
               >
                 Start For Free Today
