@@ -133,7 +133,9 @@ const Home = () => {
             <h2 className="text-center text-base/7 font-semibold text-brand-600">
               Intuitive Monitoring
             </h2>
-            <Heading>Stay ahead with real-time insights</Heading>
+            <Heading className="text-center">
+              Stay ahead with real-time insights
+            </Heading>
           </div>
           <div className="grid gap-4 lg:grid-cols-3 lg:grid-rows-2">
             {/* First Bento Grid Item */}
